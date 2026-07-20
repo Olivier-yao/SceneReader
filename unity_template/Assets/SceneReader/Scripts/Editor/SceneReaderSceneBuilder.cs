@@ -121,6 +121,7 @@ namespace SceneReader.EditeurOutils
         {
             var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
 
+            CreerCameraRequisePourOverlay();
             CreerEventSystem();
             var canvas = CreerCanvasRacine("Canvas");
 
