@@ -193,10 +193,21 @@ namespace SceneReader.UI
 
             foreach (Transform enfant in conteneurChoix) Destroy(enfant.gameObject);
 
-            foreach (var option in choix.options)
+            const float hauteurOption = 56f;
+            const float espacementOption = 10f;
+            for (int i = 0; i < choix.options.Count; i++)
             {
+                var option = choix.options[i];
                 var instance = Instantiate(prefabBoutonChoix, conteneurChoix);
                 instance.SetActive(true);
+
+                // Positionnement explicite (pas de LayoutGroup), ancré en haut du conteneur.
+                var rt = instance.GetComponent<RectTransform>();
+                rt.anchorMin = rt.anchorMax = new Vector2(0.5f, 1f);
+                rt.pivot = new Vector2(0.5f, 1f);
+                rt.sizeDelta = new Vector2(760, hauteurOption);
+                rt.anchoredPosition = new Vector2(0, -i * (hauteurOption + espacementOption));
+
                 var texte = instance.GetComponentInChildren<Text>();
                 if (texte != null) texte.text = option.texte;
                 var bouton = instance.GetComponent<Button>();
