@@ -28,9 +28,16 @@ namespace SceneReader.Engine
         {
             var resultat = new List<HistoireDisponible>();
             string dossier = DossierHistoires;
-            if (!Directory.Exists(dossier)) return resultat;
+            if (!Directory.Exists(dossier))
+            {
+                Debug.LogWarning($"[SceneReader] Dossier des histoires introuvable : \"{dossier}\" (Application.streamingAssetsPath=\"{Application.streamingAssetsPath}\")");
+                return resultat;
+            }
 
-            foreach (var chemin in Directory.GetFiles(dossier, "*.scenereader.json"))
+            var fichiers = Directory.GetFiles(dossier, "*.scenereader.json");
+            Debug.Log($"[SceneReader] {fichiers.Length} fichier(s) .scenereader.json trouvé(s) dans \"{dossier}\"");
+
+            foreach (var chemin in fichiers)
             {
                 try
                 {
