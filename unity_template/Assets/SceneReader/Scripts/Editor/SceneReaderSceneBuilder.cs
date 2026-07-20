@@ -67,17 +67,13 @@ namespace SceneReader.EditeurOutils
             var rtTitre = titre.GetComponent<RectTransform>();
             AncrerHaut(rtTitre, 0.5f, 1f, new Vector2(0, -70), new Vector2(800, 80));
 
-            // Liste des histoires (ScrollView)
-            var scrollView = CreerScrollView(canvas.transform, "ListeHistoires", out var conteneurListe);
-            var rtScroll = scrollView.GetComponent<RectTransform>();
-            AncrerCentre(rtScroll, new Vector2(0, 40), new Vector2(640, 420));
-            var layoutListe = conteneurListe.gameObject.AddComponent<VerticalLayoutGroup>();
-            layoutListe.spacing = 8;
-            layoutListe.childForceExpandHeight = false;
-            layoutListe.childControlHeight = false;
-            layoutListe.padding = new RectOffset(4, 4, 4, 4);
-            var fitterListe = conteneurListe.gameObject.AddComponent<ContentSizeFitter>();
-            fitterListe.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
+            // Liste des histoires : conteneur simple, positionnement calculé en
+            // code dans MenuPrincipalControleur (pas de Mask/ScrollRect/LayoutGroup —
+            // trop fragile à assembler sans retour visuel direct sur l'éditeur).
+            var conteneurListeGO = CreerPanel(canvas.transform, "ListeHistoires", new Color(0, 0, 0, 0));
+            var rtConteneurListe = conteneurListeGO.GetComponent<RectTransform>();
+            AncrerCentre(rtConteneurListe, new Vector2(0, 40), new Vector2(640, 420));
+            var conteneurListe = rtConteneurListe;
 
             var texteAucune = CreerTexte(canvas.transform, "AucuneHistoire",
                 "Aucune histoire trouvée dans Assets/StreamingAssets/Histoires/.\nDéposez-y un fichier .scenereader.json (exporté depuis l'app Phase 1).",
