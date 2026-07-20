@@ -131,3 +131,98 @@ Registered in 0.007223 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Package Manager log level set to [2]
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.786 seconds
+Domain Reload Profiling: 1858ms
+	BeginReloadAssembly (273ms)
+		CreateAndSetChildDomain (21ms)
+	RebuildCommonClasses (11ms)
+	RebuildNativeTypeToScriptingClass (30ms)
+	initialDomainReloadingComplete (144ms)
+	LoadAllAssembliesAndSetupDomain (606ms)
+		LoadAssemblies (245ms)
+		AnalyzeDomain (428ms)
+			TypeCache.Refresh (425ms)
+				TypeCache.ScanAssembly (399ms)
+	FinalizeReload (793ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			BeforeProcessingInitializeOnLoad (189ms)
+			ProcessInitializeOnLoadAttributes (193ms)
+			ProcessInitializeOnLoadMethodAttributes (260ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 25 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.ide.rider@3.0.27 (location: C:\personnel\claude\scenereader\unity_template\Library\PackageCache\com.unity.ide.rider@8ca554ad34c2)
+    com.unity.ide.visualstudio@2.0.22 (location: C:\personnel\claude\scenereader\unity_template\Library\PackageCache\com.unity.ide.visualstudio@8140e851d83e)
+    com.unity.searcher@4.9.4 (location: C:\personnel\claude\scenereader\unity_template\Library\PackageCache\com.unity.searcher@d45a78918735)
+    com.unity.burst@1.8.29 (location: C:\personnel\claude\scenereader\unity_template\Library\PackageCache\com.unity.burst@6bb9aca3ef38)
+    com.unity.nuget.mono-cecil@1.11.6 (location: C:\personnel\claude\scenereader\unity_template\Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff)
+    com.unity.test-framework.performance@3.5.0 (location: C:\personnel\claude\scenereader\unity_template\Library\PackageCache\com.unity.test-framework.performance@8b56083ec0f0)
+  Built-in packages:
+    com.unity.modules.imageconversion@1.0.0 (location: C:\personnel\claude\scenereader\unity_template\Library\PackageCache\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: C:\personnel\claude\scenereader\unity_template\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.unitywebrequest@1.0.0 (location: C:\personnel\claude\scenereader\unity_template\Library\PackageCache\com.unity.modules.unitywebrequest)
+    com.unity.render-pipelines.universal@17.5.0 (location: C:\personnel\claude\scenereader\unity_template\Library\PackageCache\com.unity.render-pipelines.universal@e38be786c41e)
+    com.unity.test-framework@1.7.0 (location: C:\personnel\claude\scenereader\unity_template\Library\PackageCache\com.unity.test-framework@1405238725ab)
+    com.unity.ugui@2.5.0 (location: C:\personnel\claude\scenereader\unity_template\Library\PackageCache\com.unity.ugui@f2d87ebaaa32)
+    com.unity.modules.ui@1.0.0 (location: C:\personnel\claude\scenereader\unity_template\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.audio@1.0.0 (location: C:\personnel\claude\scenereader\unity_template\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.physics2d@1.0.0 (location: C:\personnel\claude\scenereader\unity_template\Library\PackageCache\com.unity.modules.physics2d)
+    com.unity.modules.physics@1.0.0 (location: C:\personnel\claude\scenereader\unity_template\Library\PackageCache\com.unity.modules.physics)
+    com.unity.ext.nunit@2.1.0 (location: C:\personnel\claude\scenereader\unity_template\Library\PackageCache\com.unity.ext.nunit@44f7d31723bd)
+    com.unity.modules.jsonserialize@1.0.0 (location: C:\personnel\claude\scenereader\unity_template\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.render-pipelines.core@17.5.0 (location: C:\personnel\claude\scenereader\unity_template\Library\PackageCache\com.unity.render-pipelines.core@539ef1c759fb)
+    com.unity.shadergraph@17.5.0 (location: C:\personnel\claude\scenereader\unity_template\Library\PackageCache\com.unity.shadergraph@636559dc59a3)
+    com.unity.render-pipelines.universal-config@17.5.0 (location: C:\personnel\claude\scenereader\unity_template\Library\PackageCache\com.unity.render-pipelines.universal-config@fdda01c80fe3)
+    com.unity.modules.physicscore2d@1.0.0 (location: C:\personnel\claude\scenereader\unity_template\Library\PackageCache\com.unity.modules.physicscore2d)
+    com.unity.collections@6.5.0 (location: C:\personnel\claude\scenereader\unity_template\Library\PackageCache\com.unity.collections@a43cabe808ca)
+    com.unity.modules.terrain@1.0.0 (location: C:\personnel\claude\scenereader\unity_template\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.mathematics@1.4.0 (location: C:\personnel\claude\scenereader\unity_template\Library\PackageCache\com.unity.mathematics@981956d94fb6)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.03 seconds
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:80
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\personnel\claude\scenereader\unity_template
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping - application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping - 200 - application/grpc 58.3013ms
+Starting: C:\Program Files\Unity\Hub\Editor\6000.5.4f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/personnel/claude/scenereader/unity_template
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors - application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/ConfigurePostProcessors'
+DisplayProgressbar: Compiling Scripts
+warn: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly system.runtime.interopservices.windowsruntime has duplicate hint path. Ignoring "C:\Program Files\Unity\Hub\Editor\6000.5.4f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Runtime.InteropServices.WindowsRuntime.dll" in favor of "C:\Program Files\Unity\Hub\Editor\6000.5.4f1\Editor\Data\NetStandard\Extensions\2.0.0\System.Runtime.InteropServices.WindowsRuntime.dll"
+warn: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly system.componentmodel.composition has duplicate hint path. Ignoring "C:\Program Files\Unity\Hub\Editor\6000.5.4f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\System.ComponentModel.Composition.dll" in favor of "C:\Program Files\Unity\Hub\Editor\6000.5.4f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.ComponentModel.Composition.dll"
+info: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Resolved Unity.Burst.Cecil, Version=0.11.6.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e with Library\PackageCache\com.unity.burst@6bb9aca3ef38\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll
+info: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Resolved Mono.Cecil, Version=0.11.5.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e with Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff\Mono.Cecil.dll
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/ConfigurePostProcessors'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/ConfigurePostProcessors - 200 - application/grpc 1183.4619ms
+ExitCode: 4 Duration: 1s592ms
+Rebuilding DAG because FileSignature timestamp changed: Library/Bee/1900b0aE-inputdata.json
+[543/670    1s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+*** Tundra requires additional run (1.51 seconds), 1 items updated, 542 evaluated
+Starting: C:\Program Files\Unity\Hub\Editor\6000.5.4f1\Editor\Data\netcorerun\netcorerun.exe "C:\Program Files\Unity\Hub\Editor\6000.5.4f1\Editor\Data\Tools\BuildPipeline\ScriptCompilationBuildProgram.exe" "Library/Bee/1900b0aE.dag.json" "Library/Bee/1900b0aE-inputdata.json" "Library\Bee\buildprogram0.traceevents"
+WorkingDir: C:/personnel/claude/scenereader/unity_template
