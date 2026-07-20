@@ -40,18 +40,29 @@ namespace SceneReader.UI
             if (boutonContinuer != null) boutonContinuer.onClick.AddListener(ContinuerPartie);
         }
 
+        private const float HAUTEUR_BOUTON_HISTOIRE = 56f;
+        private const float ESPACEMENT_BOUTON_HISTOIRE = 12f;
+
         private void ConstruireListe()
         {
             bool aucuneHistoire = histoiresDisponibles.Count == 0;
-            Debug.Log($"[SceneReader] ConstruireListe : {histoiresDisponibles.Count} histoire(s), conteneur={(conteneurListeHistoires != null ? conteneurListeHistoires.name : "NULL")}, prefab={(prefabBoutonHistoire != null ? prefabBoutonHistoire.name : "NULL")}");
             if (texteAucuneHistoire != null) texteAucuneHistoire.gameObject.SetActive(aucuneHistoire);
             if (aucuneHistoire) return;
 
-            foreach (var disponible in histoiresDisponibles)
+            for (int i = 0; i < histoiresDisponibles.Count; i++)
             {
+                var disponible = histoiresDisponibles[i];
                 var instance = Instantiate(prefabBoutonHistoire, conteneurListeHistoires);
                 instance.SetActive(true);
-                Debug.Log($"[SceneReader] Bouton instancié pour \"{disponible.histoire.titre}\" sous {conteneurListeHistoires.name} — rect={instance.GetComponent<RectTransform>().rect}");
+
+                // Positionnement explicite (pas de LayoutGroup) : ancré en haut du
+                // conteneur, empilé verticalement selon l'index.
+                var rt = instance.GetComponent<RectTransform>();
+                rt.anchorMin = rt.anchorMax = new Vector2(0.5f, 1f);
+                rt.pivot = new Vector2(0.5f, 1f);
+                rt.sizeDelta = new Vector2(600, HAUTEUR_BOUTON_HISTOIRE);
+                rt.anchoredPosition = new Vector2(0, -i * (HAUTEUR_BOUTON_HISTOIRE + ESPACEMENT_BOUTON_HISTOIRE));
+
                 var texte = instance.GetComponentInChildren<Text>();
                 if (texte != null)
                 {
