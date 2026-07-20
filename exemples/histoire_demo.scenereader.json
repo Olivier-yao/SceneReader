@@ -1,0 +1,100 @@
+{
+  "version": "1.0",
+  "titre": "La Porte",
+  "auteur": "SceneReader (exemple)",
+  "personnages": [
+    {
+      "id": "amara",
+      "nom": "Amara",
+      "description": "Une jeune femme déterminée, cheveux courts, toujours prête à agir vite.",
+      "couleur": "#E8734A",
+      "portrait": "portraits/amara.png"
+    },
+    {
+      "id": "gardien",
+      "nom": "Le Gardien",
+      "description": "Une voix grave derrière la porte, on ne voit jamais son visage.",
+      "couleur": "#4A6FE8",
+      "portrait": "portraits/gardien.png"
+    }
+  ],
+  "variables": [
+    { "id": "a_menti", "type": "bool", "defaut": false },
+    { "id": "porte_ouverte", "type": "bool", "defaut": false }
+  ],
+  "scenes": [
+    {
+      "id": "scene_01",
+      "titre": "La porte",
+      "decor": "decors/maison_nuit.png",
+      "elements": [
+        { "type": "narration", "texte": "La pluie tombait depuis des heures. Amara s'arrêta devant la vieille porte de bois, la main levée, hésitante." },
+        { "type": "dialogue", "personnage": "amara", "texte": "Tu es sûr de vouloir entrer ? On ne connaît même pas cette maison." },
+        { "type": "narration", "texte": "Une voix grave répondit de l'autre côté, étouffée par le battant." },
+        { "type": "dialogue", "personnage": "gardien", "texte": "Qui va là, à cette heure ?" },
+        {
+          "type": "choix",
+          "question": "Que fait Amara ?",
+          "options": [
+            { "texte": "Dire la vérité : elle cherche un abri.", "vers": "scene_02" },
+            { "texte": "Mentir et prétendre être attendue.", "vers": "scene_03", "set": [{ "variable": "a_menti", "valeur": true }] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene_02",
+      "titre": "La vérité",
+      "decor": "decors/maison_nuit.png",
+      "elements": [
+        { "type": "dialogue", "personnage": "amara", "texte": "Je cherche juste un abri pour la nuit. La pluie ne s'arrête pas." },
+        { "type": "narration", "texte": "Un long silence suivit. Puis on entendit un verrou tourner." },
+        { "type": "dialogue", "personnage": "gardien", "texte": "Honnêteté rare, par ce temps. Entre, avant de finir trempée." },
+        { "type": "set", "variable": "porte_ouverte", "valeur": true }
+      ],
+      "suivant": "scene_04"
+    },
+    {
+      "id": "scene_03",
+      "titre": "Le mensonge",
+      "decor": "decors/maison_nuit.png",
+      "elements": [
+        { "type": "dialogue", "personnage": "amara", "texte": "On m'attend. C'est bien ici, la réunion de ce soir ?" },
+        { "type": "narration", "texte": "Le silence qui suivit était différent — plus long, plus dur." },
+        { "type": "dialogue", "personnage": "gardien", "texte": "Il n'y a pas de réunion ce soir. Et je n'aime pas qu'on me mente." },
+        {
+          "type": "choix",
+          "question": "Amara insiste-t-elle ?",
+          "options": [
+            { "texte": "Avouer le mensonge et s'excuser.", "vers": "scene_02", "condition": "a_menti == true" },
+            { "texte": "Partir en courant sous la pluie.", "vers": "scene_05" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene_04",
+      "titre": "À l'abri",
+      "decor": "decors/interieur_chaleureux.png",
+      "elements": [
+        { "type": "narration", "texte": "À l'intérieur, un feu crépitait déjà. Le Gardien tira une chaise près de l'âtre." },
+        { "type": "dialogue", "personnage": "gardien", "texte": "Reste le temps qu'il faut. Une maison qui ferme sa porte à la vérité n'en est pas une." },
+        { "type": "dialogue", "personnage": "amara", "texte": "Merci. Je n'oublierai pas ça." },
+        { "type": "narration", "texte": "Dehors, la pluie continuait de tomber. Mais pour cette nuit, Amara avait trouvé un toit." }
+      ],
+      "fin": true
+    },
+    {
+      "id": "scene_05",
+      "titre": "Sous la pluie",
+      "decor": "decors/rue_pluie.png",
+      "elements": [
+        { "type": "narration", "texte": "Amara courut jusqu'à en perdre le souffle, loin de la porte et de la voix grave." },
+        { "type": "dialogue", "personnage": "amara", "texte": "Une autre porte. Il y en aura toujours une autre." },
+        { "type": "narration", "texte": "Elle disparut dans la nuit, trempée, mais libre de tout mensonge à rattraper." }
+      ],
+      "fin": true
+    }
+  ],
+  "scene_depart": "scene_01"
+}

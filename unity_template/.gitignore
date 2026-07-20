@@ -1,0 +1,20 @@
+# Généré par Unity — jamais versionné.
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]serSettings/
+/[Mm]emoryCaptures/
+
+# IDE générés par Unity à l'ouverture du projet
+.vs/
+.vscode/
+*.csproj
+*.sln
+*.user
+*.suo
+
+# Fichiers de sortie de test
+_test_results.xml
