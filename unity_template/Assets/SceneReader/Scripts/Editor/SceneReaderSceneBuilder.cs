@@ -139,13 +139,11 @@ namespace SceneReader.EditeurOutils
             AncrerBas(panneauChoix.GetComponent<RectTransform>(), 0.5f, 0f, new Vector2(0, 40), new Vector2(900, 420));
             var texteQuestion = CreerTexte(panneauChoix.transform, "Question", "", 26, TextAnchor.MiddleCenter, CouleurTexte, FontStyle.Bold);
             AncrerHaut(texteQuestion.GetComponent<RectTransform>(), 0.5f, 1f, new Vector2(0, -20), new Vector2(840, 50));
+            // Pas de LayoutGroup ici non plus : JeuControleur positionne les
+            // boutons d'option explicitement (même choix que pour la liste
+            // d'histoires du menu, voir MenuPrincipalControleur.ConstruireListe).
             var conteneurChoix = CreerPanel(panneauChoix.transform, "ConteneurOptions", new Color(0, 0, 0, 0));
             AncrerCentre(conteneurChoix.GetComponent<RectTransform>(), new Vector2(0, -20), new Vector2(840, 320));
-            var layoutChoix = conteneurChoix.AddComponent<VerticalLayoutGroup>();
-            layoutChoix.spacing = 10;
-            layoutChoix.childForceExpandHeight = false;
-            layoutChoix.childControlHeight = false;
-            layoutChoix.childAlignment = TextAnchor.UpperCenter;
 
             // --- Boîte de dialogue (décor par-dessus, choix par-dessus elle) ---
             var panneauDialogue = CreerPanel(canvas.transform, "PanneauDialogue", CouleurPanneau);
