@@ -43,6 +43,7 @@ namespace SceneReader.UI
         private void ConstruireListe()
         {
             bool aucuneHistoire = histoiresDisponibles.Count == 0;
+            Debug.Log($"[SceneReader] ConstruireListe : {histoiresDisponibles.Count} histoire(s), conteneur={(conteneurListeHistoires != null ? conteneurListeHistoires.name : "NULL")}, prefab={(prefabBoutonHistoire != null ? prefabBoutonHistoire.name : "NULL")}");
             if (texteAucuneHistoire != null) texteAucuneHistoire.gameObject.SetActive(aucuneHistoire);
             if (aucuneHistoire) return;
 
@@ -50,6 +51,7 @@ namespace SceneReader.UI
             {
                 var instance = Instantiate(prefabBoutonHistoire, conteneurListeHistoires);
                 instance.SetActive(true);
+                Debug.Log($"[SceneReader] Bouton instancié pour \"{disponible.histoire.titre}\" sous {conteneurListeHistoires.name} — rect={instance.GetComponent<RectTransform>().rect}");
                 var texte = instance.GetComponentInChildren<Text>();
                 if (texte != null)
                 {
