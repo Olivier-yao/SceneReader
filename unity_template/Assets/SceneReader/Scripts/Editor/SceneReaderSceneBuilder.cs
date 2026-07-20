@@ -292,6 +292,25 @@ namespace SceneReader.EditeurOutils
             var go = new GameObject("EventSystem", typeof(EventSystem), typeof(StandaloneInputModule));
         }
 
+        /// <summary>
+        /// Un Canvas en Screen Space - Overlay n'a besoin d'aucune caméra pour
+        /// afficher son contenu, MAIS le pipeline de rendu (URP) n'exécute
+        /// aucune passe de rendu du tout — donc ne composite jamais l'UI —
+        /// tant qu'il n'y a strictement aucune Camera dans la scène (message
+        /// "No cameras rendering" dans la fenêtre Game). D'où cette caméra,
+        /// qui n'a rien à filmer mais dont la seule présence déclenche le rendu.
+        /// </summary>
+        private static void CreerCameraRequisePourOverlay()
+        {
+            var go = new GameObject("Main Camera", typeof(Camera), typeof(AudioListener));
+            go.tag = "MainCamera";
+            var camera = go.GetComponent<Camera>();
+            camera.clearFlags = CameraClearFlags.SolidColor;
+            camera.backgroundColor = CouleurFondSombre;
+            camera.orthographic = true;
+            camera.cullingMask = 0; // ne rend aucun objet 3D : seule l'UI Overlay compte ici
+        }
+
         private static GameObject CreerCanvasRacine(string nom)
         {
             var go = new GameObject(nom, typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster));
